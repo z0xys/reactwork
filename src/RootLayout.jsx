@@ -1,8 +1,6 @@
 import { useState } from 'react';
 import { Outlet, Link, NavLink } from 'react-router-dom';
 import Sidebar, { SidebarItem } from './Sidebar';
-import { Flex, Text, Button } from '@radix-ui/themes';
-import * as Accordion from '@radix-ui/react-accordion';
 
 
 const RootLayout = () => {
@@ -16,10 +14,12 @@ const RootLayout = () => {
     <div className='flex flex-row'>
       <Sidebar>
         <NavLink to="/app/dashboard"><SidebarItem text={"Home"} /></NavLink>
-        <Link to="/app/inventory"><SidebarItem text={"Form1"} /></Link>
+        <Link to="/app/project/view"><SidebarItem text={"Projects"} /></Link>
       </Sidebar>
 
+      <div className='flex-grow h-screen'>
       <Outlet />
+      </div>
     </div>
   );
 };

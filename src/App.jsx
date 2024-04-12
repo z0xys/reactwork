@@ -1,8 +1,9 @@
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from "react-router-dom";
 import ErrorPage from "./error-page.jsx";
-import InventoryLayout from "./InventoryLayout.jsx";
+import ProjectView from "./ProjectLayout.jsx";
 import RootLayout from "./RootLayout.jsx";
 import { useState } from "react";
+import Projects from "./Projects.jsx";
 
 
 const isLoggedIn = true;
@@ -29,19 +30,23 @@ const router = createBrowserRouter([
         element: <div>DASHBOARD PAGE</div>,
       },
       {
-        path: 'inventory',
-        element: isLoggedIn?<InventoryLayout />:<div>Not logged in</div>,
+        path: 'project',
+        element: isLoggedIn?<ProjectView />:<div>Not logged in</div>,
         children: [
           // {
-          //   index: true,
+          //   index: false,
           // },
           {
+            path: 'view',
+            element: <Projects/>,
+          },
+          {
             path: 'create',
-            element: <div>INVENTORY CREATE PAGE</div>,
+            element: <div>PROJECT CREATE PAGE</div>,
           },
           {
             path: 'update/:id',
-            element: <div>INVENTORY UPDATE PAGE</div>,
+            element: <div>PROJECT UPDATE PAGE</div>,
           },
         ],
       },

@@ -6,11 +6,11 @@ const InventoryLayout = () => {
   const columns = [
     {
       Header: 'Name',
-      accessorKey: 'name', // Replace with your data key
+      accessor: 'name', // Replace with your data key
     },
     {
       Header: 'Age',
-      accessorKey: 'age', // Replace with your data key
+      accessor: 'age', // Replace with your data key
     },
     // Add more columns as needed...
   ];
@@ -22,6 +22,7 @@ const InventoryLayout = () => {
 
   return (
     <div>
+      <h1>Invertory layout page</h1>
       <div>
         <GenericTable columns={columns} data={data}/>
       </div>

@@ -4,6 +4,7 @@ import ProjectView from "./ProjectLayout.jsx";
 import RootLayout from "./RootLayout.jsx";
 import { useState } from "react";
 import Projects from "./Projects.jsx";
+import ProjectForm from "./ProjectForm.jsx";
 
 
 const isLoggedIn = true;
@@ -11,19 +12,19 @@ const router = createBrowserRouter([
   {
     path: '/',
     element: <Navigate to="/login" />,
-    errorElement: <ErrorPage/>
+    errorElement: <ErrorPage />
   },
   {
     path: '/login',
-    element: isLoggedIn?<Navigate to="/app/dashboard" />:<div>Not logged in</div>,
+    element: isLoggedIn ? <Navigate to="/app/dashboard" /> : <div>Not logged in</div>,
   },
   {
     path: '/app',
-    element: <RootLayout/>,
+    element: <RootLayout />,
     children: [
       {
         index: true,
-        element: <Navigate to="dashboard"/>,
+        element: <Navigate to="dashboard" />,
       },
       {
         path: 'dashboard',
@@ -31,18 +32,18 @@ const router = createBrowserRouter([
       },
       {
         path: 'project',
-        element: isLoggedIn?<ProjectView />:<div>Not logged in</div>,
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
           // },
           {
             path: 'view',
-            element: <Projects/>,
+            element: <Projects />,
           },
           {
             path: 'create',
-            element: <div>PROJECT CREATE PAGE</div>,
+            element: <ProjectForm />,
           },
           {
             path: 'update/:id',
@@ -52,7 +53,7 @@ const router = createBrowserRouter([
       },
     ],
   },
-  
+
 ]);
 
 function App() {

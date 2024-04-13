@@ -3,29 +3,22 @@ import GenericTable from "../GenericTable";
 import { Button, Heading, Grid } from '@radix-ui/themes';
 import { useState, useEffect } from "react";
 
-export default function Projects() {
+export default function Stores() {
     let location = useLocation();
     let createForm = location.pathname.replace('/view', '/create');
 
     const [data, setData] = useState([]);
 
     const cols = [
-        { field: "projectCode" },
-        { field: "projectName" },
-        { field: "projectManager" },
+        { field: "storeName" },
+        { field: "contactPerson" },
+        { field: "contactNo" },
         { field: "address" },
-        { field: "projectDuration" },
-        { field: "gstNumber" },
-        { field: "agreementNumber" },
-        { field: "date" },
-        { field: "extendedDuration" },
-        { field: "billingAddress" },
-        { field: "remarks" }
     ]
 
     const fetchData = async () => {
         try {
-            const response = await fetch('http://localhost:3000/Projects');
+            const response = await fetch('http://localhost:3000/Stores');
             if (response.ok) {
                 const result = await response.json();
                 setData(result);
@@ -45,7 +38,7 @@ export default function Projects() {
     return (
         <div className="flex flex-col h-screen p-5 pr-2">
             <div className="flex flex-row justify-between pb-2">
-                <Heading as="h2">All Projects</Heading>
+                <Heading as="h2">All Stores</Heading>
                 <Grid columns="2" gap="2">
                     <NavLink to={createForm}>
                         <Button>Add</Button>
@@ -54,6 +47,7 @@ export default function Projects() {
                 </Grid>
             </div>
             <div className="h-5/6 flex-1" >
+
                 <GenericTable data={data} cols={cols} />
             </div>
         </div>

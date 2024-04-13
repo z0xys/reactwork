@@ -13,14 +13,106 @@
       "contactNo": "87653"
     }
   ],
-  "Stores": [],
-  "Projects": [],
-  "Divisions": [],
-  "SubDivisions": [],
-  "SubStations": [],
+  "Stores": [
+    {
+      "id": "2603",
+      "storeName": "Kami Name",
+      "contactPerson": "Kami sama",
+      "contactNo": "9876543210",
+      "address": "Heaven"
+    },
+    {
+      "id": "9102",
+      "storeName": "Siddnat Ki Dukan",
+      "contactPerson": "smaitra.com",
+      "contactNo": "975431",
+      "address": "Santoshpur"
+    }
+  ],
+  "Projects": [
+    {
+      "id": "845d",
+      "projectCode": "jhabks",
+      "projectName": "jksaks",
+      "projectManager": "ljsalsj",
+      "address": "olasjsaj",
+      "projectDuration": "ojslajsla",
+      "gstNumber": "ahskahs",
+      "agreementNumber": "56446",
+      "date": "2024-04-07",
+      "extendedDuration": "kjskas",
+      "billingAddress": "jhsloajslo",
+      "remarks": "ojsaljsl"
+    }
+  ],
+  "Divisions": [
+    {
+      "id": "e757",
+      "divisionName": "Main Division name",
+      "remarks": "None"
+    }
+  ],
+  "SubDivisions": [
+    {
+      "id": "100e",
+      "subDivisionName": "Sub Division name",
+      "remarks": "None"
+    }
+  ],
+  "SubStations": [
+    {
+      "id": "284a",
+      "subStationName": "Sub Station",
+      "remarks": "None"
+    }
+  ],
   "PaymentModes": [],
   "MaterialCategories": [],
-  "BOQMasters": [],
-  "Suppliers": [],
-  "SubContractors": []
+  "BOQMasters": [
+    {
+      "id": "621e",
+      "productName": "sdsds",
+      "productCategory": "sdsd",
+      "gst": "sds",
+      "uom": "dsds",
+      "boqPrice": "232",
+      "projectBoqPrice": "23",
+      "ammendment": "11",
+      "remarks": "saaf"
+    }
+  ],
+  "Suppliers": [
+    {
+      "id": "34f3",
+      "supplierName": "ahas",
+      "address": "loalsjl",
+      "gst": "lsajls",
+      "pan": "ksajs",
+      "bankAcNo": "92809817",
+      "bankAdressName": "57567",
+      "ifscCode": "lskala",
+      "factoryLocation": "ljlsll",
+      "productsManufacturer": "sjlajsloj",
+      "contactNo": "987876585",
+      "designation": "lsa,la",
+      "mobileNo": "78657464",
+      "emailId": "slajlas@email.com"
+    }
+  ],
+  "SubContractors": [
+    {
+      "id": "b279",
+      "nameFirm": "aaaa",
+      "contactPerson": "ggggg",
+      "contactNo": "23245",
+      "address": "asadsad",
+      "state": "ssds",
+      "workOrderId": "fdsfd",
+      "date": "2024-04-14",
+      "workOrderDetails": "assdad",
+      "gst": "asdsd",
+      "pan": "asdsa",
+      "emailId": "asas@email.com"
+    }
+  ]
 }

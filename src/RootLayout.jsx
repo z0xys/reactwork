@@ -1,24 +1,39 @@
-// import { useState } from 'react';
-import { Outlet, Link, NavLink } from 'react-router-dom';
+import { useState } from 'react';
+import { Outlet, NavLink } from 'react-router-dom';
 import Sidebar, { SidebarItem } from './Sidebar';
 
 
 const RootLayout = () => {
-  // const [isExpanded, setExpanded] = useState(true);
+  const [isExpanded, setExpanded] = useState(true);
 
-  // const toggleSidebar = () => {
-  //   setExpanded((prevState) => !prevState);
-  // };
+  const toggleSidebar = () => {
+    setExpanded((prevState) => !prevState);
+  };
 
   return (
     <div className='flex flex-row'>
-      <Sidebar>
-        <NavLink to="/app/dashboard"><SidebarItem text={"Home"} /></NavLink>
-        <Link to="/app/project/view"><SidebarItem text={"Projects"} /></Link>
+      <Sidebar isExpanded={isExpanded} toggleSidebar={toggleSidebar}>
+        <NavLink to="/app/dashboard">
+          {({ isActive }) => (
+            <SidebarItem text="Home" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/project/view">
+          {({ isActive }) => (
+            <SidebarItem text="Projects" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/project/create">
+          {({ isActive }) => (
+            <SidebarItem text="Create Projects" isActive={isActive} />
+          )}
+        </NavLink>
       </Sidebar>
 
+
       <div className='flex-grow h-screen'>
-      <Outlet />
+        {!isExpanded && <button onClick={toggleSidebar}>Openbtn</button>}
+        <Outlet />
       </div>
     </div>
   );

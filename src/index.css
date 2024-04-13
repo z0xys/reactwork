@@ -1,3 +1,7 @@
 @import 'tailwindcss/base';
 @import 'tailwindcss/components';
 @import 'tailwindcss/utilities';
+
+:root, .light, .light-theme, .radix-themes {
+  --color-background: #e2e8f0;
+}

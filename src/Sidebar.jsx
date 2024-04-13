@@ -2,7 +2,7 @@ export default function Sidebar({ isExpanded, toggleSidebar, children }) {
     
 
     return (
-        <aside className={`h-screen ${isExpanded ? 'mr-10' : ''}`}>
+        <aside className={`h-screen ${isExpanded ? 'mr-5' : ''}`}>
             {isExpanded && (
                 <nav className="h-full flex flex-col border-r border-red-500 shadow-sm">
                     <div className="p-4 pb-4 flex justify-between items-center">

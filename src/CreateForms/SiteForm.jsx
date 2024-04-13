@@ -35,9 +35,9 @@ const SiteForm = () => {
             <div className='pl-5'>
             <div className='p-5 pl-0'>
                 <Heading weight={'bold'}>
-                    Add new supplier
+                    Add new site location
                 </Heading>
-                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new supplier.</Text>
+                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new site location.</Text>
             </div>
             <div>
                 <label>Site Location Name:</label>

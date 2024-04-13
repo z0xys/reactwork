@@ -6,8 +6,9 @@ import { Link } from "react-router-dom";
 export default function Sidebar({ isExpanded, toggleSidebar, children }) {
 
 
+
     return (
-        <aside className={`h-screen sticky top-0 overflow-y-auto mr-2`}>
+        <aside className={`h-screen sticky top-0 overflow-y-auto mr-1`}>
             {isExpanded && (
                 <nav className="h-full flex flex-col border-r bg-slate-700 ">
 
@@ -34,17 +35,19 @@ export default function Sidebar({ isExpanded, toggleSidebar, children }) {
 }
 
 export function SidebarItem({icon, text, isActive, createForm }) {
-
+    const arr = ['Home'];
     
     return (
         <li className={`text-slate-200 p-1 ${isActive?"bg-slate-800":''}`}>
             <span className="flex flex-row justify-between">
                 {icon}{text} 
-                {isActive && text !== "Home" &&
+                {isActive && !arr.includes(`${text}`) &&
                 <Link to={createForm}>
                     <CirclePlus size={'22'}/>
                 </Link>
+                
                 } 
+                {/* {console.log(`${text}: `,arr.includes(`${text}`))} */}
             </span>
         </li>
     )

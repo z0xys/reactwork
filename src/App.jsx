@@ -2,7 +2,6 @@ import { createBrowserRouter, RouterProvider, Navigate, Outlet } from "react-rou
 import ErrorPage from "./error-page.jsx";
 import MainLayout from "./MainLayout.jsx";
 import RootLayout from "./RootLayout.jsx";
-import { useState } from "react";
 import Projects from "./table-views/Projects.jsx";
 import ProjectForm from "./CreateForms/ProjectForm.jsx";
 import StoreForm from "./CreateForms/StoreForm.jsx";
@@ -13,6 +12,7 @@ import SubStationForm from "./CreateForms/SubStationForm.jsx";
 import BOQMasterForm from "./CreateForms/BOQMasterForm.jsx";
 import SupplierForm from "./CreateForms/SupplierForm.jsx";
 import SubContractorForm from "./CreateForms/SubContratorForm.jsx";
+import Login from "./Login.jsx";
 
 
 const isLoggedIn = true;
@@ -24,7 +24,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/login',
-    element: isLoggedIn ? <Navigate to="/app/dashboard" /> : <div>Not logged in</div>,
+    element: isLoggedIn ? <Navigate to="/app/dashboard" /> : <Login/>,
   },
   {
     path: '/app',
@@ -36,11 +36,11 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: <div>DASHBOARD PAGE</div>,
+        element: isLoggedIn?<div>DASHBOARD PAGE</div>:  <Navigate to="/login" />,
       },
       {
         path: 'project',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
 
       {
         path: 'store',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -77,14 +77,14 @@ const router = createBrowserRouter([
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>STORE UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'sitelocation',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -99,14 +99,14 @@ const router = createBrowserRouter([
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>SITE LOCATION UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'division',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -117,7 +117,8 @@ const router = createBrowserRouter([
           },
           {
             path: 'create',
-            element: <div><DivisionForm /><div><SubDivisionForm /></div><div><SubStationForm /></div></div>,
+            // element: <div><DivisionForm /><div><SubDivisionForm /></div><div><SubStationForm /></div></div>,
+            element: <></>
           },
           {
             path: 'update/:id',
@@ -128,7 +129,7 @@ const router = createBrowserRouter([
 
       {
         path: 'paymentmode',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -139,18 +140,18 @@ const router = createBrowserRouter([
           },
           {
             path: 'create',
-            element: <ProjectForm />,
+            element: <ProjectForm />, // Change to payment mode form
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>PAYMENT MODE UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'materialcategory',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -161,18 +162,18 @@ const router = createBrowserRouter([
           },
           {
             path: 'create',
-            element: <ProjectForm />,
+            element: <ProjectForm />, // change to material category form
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>MATERIAL CATEGORY UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'boqmaster',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -187,14 +188,14 @@ const router = createBrowserRouter([
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>BOQ UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'supplier',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -209,14 +210,14 @@ const router = createBrowserRouter([
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>SUPPLIER UPDATE PAGE</div>,
           },
         ],
       },
 
       {
         path: 'subcontractor',
-        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> :  <Navigate to="/login" />,
         children: [
           // {
           //   index: false,
@@ -231,7 +232,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'update/:id',
-            element: <div>PROJECT UPDATE PAGE</div>,
+            element: <div>SUB CONTRACTOR UPDATE PAGE</div>,
           },
         ],
       },

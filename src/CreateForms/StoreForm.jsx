@@ -34,9 +34,9 @@ const StoreForm = () => {
            <div className='pl-5'>
            <div className='p-5 pl-0'>
                 <Heading weight={'bold'}>
-                    Add new supplier
+                    Add new store
                 </Heading>
-                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new supplier.</Text>
+                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new store.</Text>
             </div>
             <Grid columns={'2'} gapY={'4'}>
             <div>

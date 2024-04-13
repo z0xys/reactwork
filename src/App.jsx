@@ -13,6 +13,13 @@ import SubStationForm from "./CreateForms/SubStationForm.jsx";
 import BOQMasterForm from "./CreateForms/BOQMasterForm.jsx";
 import SupplierForm from "./CreateForms/SupplierForm.jsx";
 import SubContractorForm from "./CreateForms/SubContratorForm.jsx";
+import Sites from "./table-views/Sites.jsx";
+import Stores from "./table-views/Stores.jsx";
+import BOQMasters from "./table-views/BOQMasters.jsx";
+import Suppliers from "./table-views/Suppliers.jsx";
+import SubContractors from "./table-views/SubContractors.jsx";
+import Divisions from "./table-views/Divisions.jsx";
+import DivisionRender from "./CreateForms/DivisionRender.jsx";
 
 
 const isLoggedIn = true;
@@ -69,7 +76,7 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <Stores />,
           },
           {
             path: 'create',
@@ -91,7 +98,7 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <Sites />,
           },
           {
             path: 'create',
@@ -113,11 +120,11 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <Divisions />,
           },
           {
             path: 'create',
-            element: <div><DivisionForm /><div><SubDivisionForm /></div><div><SubStationForm /></div></div>,
+            element: <DivisionRender />,
           },
           {
             path: 'update/:id',
@@ -135,11 +142,11 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <></>,
           },
           {
             path: 'create',
-            element: <ProjectForm />,
+            element: <></>,
           },
           {
             path: 'update/:id',
@@ -157,11 +164,11 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <></>,
           },
           {
             path: 'create',
-            element: <ProjectForm />,
+            element: <></>,
           },
           {
             path: 'update/:id',
@@ -179,7 +186,7 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <BOQMasters />,
           },
           {
             path: 'create',
@@ -201,7 +208,7 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <Suppliers />,
           },
           {
             path: 'create',
@@ -223,7 +230,7 @@ const router = createBrowserRouter([
           // },
           {
             path: 'view',
-            element: <Projects />,
+            element: <SubContractors />,
           },
           {
             path: 'create',

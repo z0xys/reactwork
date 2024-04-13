@@ -2,18 +2,7 @@
 import { AgGridReact } from 'ag-grid-react'; 
 import '@ag-grid-community/styles/ag-grid.css'
 import "@ag-grid-community/styles/ag-theme-quartz.css";
-import carData from './MOCK_DATA.json';
 
-
-const cols = [
-{ 
-    field: "make",
-    checkboxSelection: true, 
-
-},
-{ field: "model" },
-{ field: "price" },
-{ field: "electric" }]
 
 const autoSizeStrategy = {
     type: 'fitGridWidth',
@@ -27,7 +16,7 @@ const gridOptions = {
 
   };
 
-const GenericTable = () => {
+const GenericTable = ({data, cols}) => {
     
     return (
         <div
@@ -36,7 +25,7 @@ const GenericTable = () => {
 
         >
             <AgGridReact
-                rowData={carData}
+                rowData={data}
                 columnDefs={cols}
                 autoSizeStrategy={autoSizeStrategy}
                 gridOptions={gridOptions}

@@ -23,15 +23,50 @@ const RootLayout = () => {
             <SidebarItem text="Projects" isActive={isActive} />
           )}
         </NavLink>
-        <NavLink to="/app/project/create">
+        <NavLink to="/app/store/view">
           {({ isActive }) => (
-            <SidebarItem text="Create Projects" isActive={isActive} />
+            <SidebarItem text="Store" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/sitelocation/view">
+          {({ isActive }) => (
+            <SidebarItem text="Site Locations" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/division/view">
+          {({ isActive }) => (
+            <SidebarItem text="Divisions" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/paymentmode/view">
+          {({ isActive }) => (
+            <SidebarItem text="Payment Modes" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/materialcategory/view">
+          {({ isActive }) => (
+            <SidebarItem text="Material Category" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/boqmaster/view">
+          {({ isActive }) => (
+            <SidebarItem text="BOQMaster" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/supplier/view">
+          {({ isActive }) => (
+            <SidebarItem text="Supplier" isActive={isActive} />
+          )}
+        </NavLink>
+        <NavLink to="/app/subcontractor/view">
+          {({ isActive }) => (
+            <SidebarItem text="Sub Contractor" isActive={isActive} />
           )}
         </NavLink>
       </Sidebar>
 
       
-      <div className='flex-grow h-screen'>
+      <div className='flex-grow h-full'>
       {!isExpanded && <button onClick={toggleSidebar}>Openbtn</button>}
         <Outlet />
       </div>

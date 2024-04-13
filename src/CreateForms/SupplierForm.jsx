@@ -1,5 +1,6 @@
 
 import { useForm } from 'react-hook-form';
+import { Button, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
 const SupplierForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -10,6 +11,15 @@ const SupplierForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+        <div className='pl-5'>
+            <div className='p-5 pl-0'>
+                <Heading weight={'bold'}>
+                    Add new supplier
+                </Heading>
+                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new supplier.</Text>
+            </div>
+
+            <Grid columns={'2'} gapY={'4'}>
             <div>
                 <label>Supplier Name:</label>
                 {errors.supplierName?.type === 'required' && (
@@ -24,7 +34,6 @@ const SupplierForm = () => {
                         {...register('supplierName', { required: true, maxLength: 20 })}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
-
                 </div>
             </div>
 
@@ -243,10 +252,12 @@ const SupplierForm = () => {
                     />
                 </div>
             </div>
+            </Grid>
 
-            
-
-            <button type="submit">Submit</button>
+            <div className='mt-5'>
+                <Button size={'3'} type="submit">Submit</Button>
+            </div>
+        </div>
         </form>
     )
 }

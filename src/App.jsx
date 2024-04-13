@@ -117,7 +117,7 @@ const router = createBrowserRouter([
           },
           {
             path: 'create',
-            element: <><DivisionForm /> <SubDivisionForm /> <SubStationForm /></>,
+            element: <div><DivisionForm /><div><SubDivisionForm /></div><div><SubStationForm /></div></div>,
           },
           {
             path: 'update/:id',
@@ -215,7 +215,7 @@ const router = createBrowserRouter([
       },
 
       {
-        path: 'subcontrator',
+        path: 'subcontractor',
         element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
         children: [
           // {

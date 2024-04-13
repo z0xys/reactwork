@@ -1,5 +1,6 @@
 
 import { useForm } from 'react-hook-form';
+import { Button, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
 const SubContractorForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
@@ -10,6 +11,14 @@ const SubContractorForm = () => {
 
     return (
         <form onSubmit={handleSubmit(onSubmit)}>
+             <div className='pl-5'>
+             <div className='p-5 pl-0'>
+                <Heading weight={'bold'}>
+                    Add new sub contractor
+                </Heading>
+                <Text as='span' color='gray' size={2} className='text-center'>Fill in this form to add new sub contractor.</Text>
+            </div>
+            <Grid columns={'2'} gapY={'4'}>
             <div>
                 <label>Name / Firm:</label>
                 {errors.nameFirm?.type === 'required' && (
@@ -119,15 +128,18 @@ const SubContractorForm = () => {
             </div>
            
             <div>
-                <label>Date:</label>
-                <input
-                    type="date"
-                    {...register('date', { required: true })}
-                />
-                {errors.date?.type === 'required' && (
-                    <span>This field is required</span>
-                )}
-            </div>
+                        <label>Date:</label>
+                        {errors.date?.type === 'required' && (
+                            <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
+                        )}
+                        <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                            <input
+                                type="date"
+                                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                                {...register('date', { required: true })}
+                            />
+                        </div>
+                    </div>
 
             <div>
                 <label>Work Order Details:</label>
@@ -217,9 +229,14 @@ const SubContractorForm = () => {
                         placeholder='pname'
                     />
                 </div>
+                
             </div>
+            </Grid>
            
-            <button type="submit">Submit</button>
+            <div className='mt-5'>
+                <Button size={'3'} type="submit">Submit</Button>
+            </div>
+            </div>
         </form>
     )
 }

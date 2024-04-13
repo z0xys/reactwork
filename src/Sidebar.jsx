@@ -5,8 +5,7 @@ export default function Sidebar({ isExpanded, toggleSidebar, children }) {
 
 
     return (
-        // ${isExpanded ? 'p-2' : ''}`
-        <aside className={`h-screen`}>
+        <aside className={`h-screen sticky top-0 overflow-y-auto mr-2`}>
             {isExpanded && (
                 <nav className="h-full flex flex-col border-r bg-slate-700 ">
 
@@ -15,7 +14,7 @@ export default function Sidebar({ isExpanded, toggleSidebar, children }) {
                             <Heading as="h1">INVENTORY</Heading>
                         </span>
 
-                        <PanelLeftClose className="text-slate-200" onClick={toggleSidebar} />
+                        {/* <PanelLeftClose className="text-slate-200" onClick={toggleSidebar} /> */}
 
                     </span>
 

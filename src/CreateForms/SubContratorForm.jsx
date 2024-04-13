@@ -1,12 +1,33 @@
 
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 import { Button, Flex, Grid, Heading, Text } from '@radix-ui/themes';
 
 const SubContractorForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const navigate = useNavigate();
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('http://localhost:3000/SubContractors', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('New Sub Contractor added:', result);
+                navigate('/app/subcontractor/view');
+            } else {
+                console.error('Error adding Sub Contractor:', response.status);
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
     };
 
     return (
@@ -28,13 +49,13 @@ const SubContractorForm = () => {
                     <span>Name cannot exceed 20 characters</span>
                 )}
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input
-                    type="text"
-                    {...register('nameFirm', { required: true, maxLength: 20 })}
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                />
-                
-                </div> 
+                    <input
+                        type="text"
+                        {...register('nameFirm', { required: true, maxLength: 20 })}
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                    />
+
+                </div>
             </div>
 
             <div>
@@ -46,13 +67,13 @@ const SubContractorForm = () => {
                     <span>Name cannot exceed 20 characters</span>
                 )}
                 <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                <input
-                    type="text"
-                    {...register('contactPerson', { required: true, maxLength: 20 })}
-                    className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                    placeholder='pname'
-                />
-                </div> 
+                    <input
+                        type="text"
+                        {...register('contactPerson', { required: true, maxLength: 20 })}
+                        className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
+                        placeholder='pname'
+                    />
+                </div>
             </div>
 
             <div>
@@ -108,7 +129,7 @@ const SubContractorForm = () => {
                     />
                 </div>
             </div>
-           
+
             <div>
                 <label>Work Order Id:</label>
                 {errors.workOrderId?.type === 'required' && (
@@ -126,7 +147,7 @@ const SubContractorForm = () => {
                     />
                 </div>
             </div>
-           
+
             <div>
                         <label>Date:</label>
                         {errors.date?.type === 'required' && (

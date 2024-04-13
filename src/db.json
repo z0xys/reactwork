@@ -1,0 +1,26 @@
+{
+  "SiteLocations": [
+    {
+      "id": "e86b",
+      "siteLocationName": "SiteName",
+      "contactPerson": "Name",
+      "contactNo": "9876543210"
+    },
+    {
+      "id": "a4db",
+      "siteLocationName": ";osaalj",
+      "contactPerson": "suhksl",
+      "contactNo": "87653"
+    }
+  ],
+  "Stores": [],
+  "Projects": [],
+  "Divisions": [],
+  "SubDivisions": [],
+  "SubStations": [],
+  "PaymentModes": [],
+  "MaterialCategories": [],
+  "BOQMasters": [],
+  "Suppliers": [],
+  "SubContractors": []
+}

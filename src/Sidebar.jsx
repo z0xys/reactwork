@@ -5,12 +5,10 @@ export default function Sidebar({children}){
 
     return (
         <>
-        <aside className=" h-screen  mr-10">
+        <aside className=" h-screen  mr-5">
             <nav className="h-full flex flex-col border-r border-red-500 shadow-sm">
                 <div className="p-4 pb-4 flex justify-between items-center">
                 <div className="">INVENTORY</div>
-                {/* <button>Closebtn</button> */}
-
                 </div>
 
                 <ul className="flex-1 px-3">{children}</ul>

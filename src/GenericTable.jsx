@@ -5,7 +5,12 @@ import "@ag-grid-community/styles/ag-theme-quartz.css";
 import carData from './MOCK_DATA.json';
 
 
-const cols = [{ field: "make" },
+const cols = [
+{ 
+    field: "make",
+    checkboxSelection: true, 
+
+},
 { field: "model" },
 { field: "price" },
 { field: "electric" }]
@@ -17,7 +22,8 @@ const autoSizeStrategy = {
 };
 
 const gridOptions = {
-    pagination: true, // Enable pagination
+    pagination: true,
+     // Enable pagination
 
   };
 

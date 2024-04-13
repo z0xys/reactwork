@@ -5,9 +5,9 @@ import GenericTable from './GenericTable.jsx'
 const ProjectView = () => {
  
   return (
-    <>
+    <div>
       <Outlet />
-    </>
+    </div>
   );
 };
 

@@ -30,9 +30,9 @@ const RootLayout = () => {
         </NavLink>
       </Sidebar>
 
-
+      
       <div className='flex-grow h-screen'>
-        {!isExpanded && <button onClick={toggleSidebar}>Openbtn</button>}
+      {!isExpanded && <button onClick={toggleSidebar}>Openbtn</button>}
         <Outlet />
       </div>
     </div>

@@ -1,5 +1,7 @@
 import { Button, IconButton, Heading } from "@radix-ui/themes";
-import { PanelLeftClose, MoreVertical } from 'lucide-react';
+import { CircleFadingPlusIcon } from "lucide-react";
+import { PanelLeftClose, MoreVertical, CirclePlus } from 'lucide-react';
+import { Link } from "react-router-dom";
 
 export default function Sidebar({ isExpanded, toggleSidebar, children }) {
 
@@ -31,10 +33,19 @@ export default function Sidebar({ isExpanded, toggleSidebar, children }) {
     );
 }
 
-export function SidebarItem({icon, text, isActive }) {
+export function SidebarItem({icon, text, isActive, createForm }) {
+
+    
     return (
         <li className={`text-slate-200 p-1 ${isActive?"bg-slate-800":''}`}>
-            <span>{icon}{text}</span>
+            <span className="flex flex-row justify-between">
+                {icon}{text} 
+                {isActive && text !== "Home" &&
+                <Link to={createForm}>
+                    <CirclePlus size={'22'}/>
+                </Link>
+                } 
+            </span>
         </li>
     )
 }

@@ -1,7 +1,7 @@
 // InventoryLayout.jsx
 import { Outlet } from 'react-router-dom';
 
-const ProjectView = () => {
+const MainLayout = () => {
  
   return (
     <div>
@@ -10,4 +10,4 @@ const ProjectView = () => {
   );
 };
 
-export default ProjectView;
+export default MainLayout;

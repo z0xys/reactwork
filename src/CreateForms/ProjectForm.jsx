@@ -52,11 +52,11 @@ const ProjectForm = () => {
                             <span className='text-red-500 text-sm mt-2 ml-2'>Name cannot exceed 20 characters</span>
                         )}
                         <div className="flex bg-white rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                           <input
+                            <input
                                 type="text"
                                 {...register('projectCode', { required: true, maxLength: 20 })}
                                 className=" block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                
+
                             />
                         </div>
                     </div>
@@ -104,18 +104,7 @@ const ProjectForm = () => {
                         {errors.address?.type === 'maxLength' && (
                             <span className='text-red-500 text-sm mt-2 ml-2'>Name cannot exceed 20 characters</span>
                         )}
-                    <div>
-                        <label>Address:</label>
-                        {errors.address?.type === 'required' && (
-                            <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
-                        )}
-                        {errors.address?.type === 'maxLength' && (
-                            <span className='text-red-500 text-sm mt-2 ml-2'>Name cannot exceed 20 characters</span>
-                        )}
 
-                        <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                            <input
-                                type="text"
                         <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                             <input
                                 type="text"
@@ -126,12 +115,7 @@ const ProjectForm = () => {
                             />
                         </div>
                     </div>
-                                {...register('address', { required: true, maxLength: 20 })}
-                                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                                placeholder='pname'
-                            />
-                        </div>
-                    </div>
+
 
                     <div>
                         <label>Project Duration:</label>
@@ -328,27 +312,6 @@ const ProjectForm = () => {
                         </div>
                     </div>
 
-                    <div>
-                        <label>Remarks:</label>
-                        {errors.remarks?.type === 'required' && (
-                            <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
-                        )}
-                        {errors.remarks?.type === 'maxLength' && (
-                            <span className='text-red-500 text-sm mt-2 ml-2'>Name cannot exceed 50 characters</span>
-                        )}
-                        <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
-                            <input
-                                type="text"
-                                {...register('remarks', { required: true, maxLength: 50 })}
-                                className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            />
-                        </div>
-                    </div>
-                </Grid>
-
-                <div className='mt-5'>
-                    <Button size={'3'} type="submit">Submit</Button>
-                </div>
                     <div>
                         <label>Remarks:</label>
                         {errors.remarks?.type === 'required' && (
@@ -371,7 +334,7 @@ const ProjectForm = () => {
                     <Button size={'3'} type="submit">Submit</Button>
                 </div>
             </div>
-        </form>
+        </form >
     )
 }
 

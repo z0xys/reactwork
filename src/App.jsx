@@ -1,9 +1,9 @@
 import { createBrowserRouter, RouterProvider, Navigate, Outlet } from "react-router-dom";
 import ErrorPage from "./error-page.jsx";
-import ProjectView from "./ProjectLayout.jsx";
+import MainLayout from "./MainLayout.jsx";
 import RootLayout from "./RootLayout.jsx";
 import { useState } from "react";
-import Projects from "./Projects.jsx";
+import Projects from "./table-views/Projects.jsx";
 import ProjectForm from "./CreateForms/ProjectForm.jsx";
 import StoreForm from "./CreateForms/StoreForm.jsx";
 import SiteForm from "./CreateForms/SiteForm.jsx";
@@ -40,7 +40,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'project',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -62,7 +62,7 @@ const router = createBrowserRouter([
 
       {
         path: 'store',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -84,7 +84,7 @@ const router = createBrowserRouter([
 
       {
         path: 'sitelocation',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -106,7 +106,7 @@ const router = createBrowserRouter([
 
       {
         path: 'division',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -128,7 +128,7 @@ const router = createBrowserRouter([
 
       {
         path: 'paymentmode',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -150,7 +150,7 @@ const router = createBrowserRouter([
 
       {
         path: 'materialcategory',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -172,7 +172,7 @@ const router = createBrowserRouter([
 
       {
         path: 'boqmaster',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -194,7 +194,7 @@ const router = createBrowserRouter([
 
       {
         path: 'supplier',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,
@@ -216,7 +216,7 @@ const router = createBrowserRouter([
 
       {
         path: 'subcontractor',
-        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        element: isLoggedIn ? <MainLayout /> : <div>Not logged in</div>,
         children: [
           // {
           //   index: false,

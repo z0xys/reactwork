@@ -1,11 +1,32 @@
 
 import { useForm } from 'react-hook-form';
+import { useNavigate } from 'react-router-dom';
 
 const BOQMasterForm = () => {
     const { register, handleSubmit, formState: { errors } } = useForm();
 
-    const onSubmit = (data) => {
-        console.log(data);
+    const navigate = useNavigate();
+
+    const onSubmit = async (data) => {
+        try {
+            const response = await fetch('http://localhost:3000/BOQMasters', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (response.ok) {
+                const result = await response.json();
+                console.log('New BOQ Master added:', result);
+                navigate('/app/boqmaster/view');
+            } else {
+                console.error('Error adding BOQ Master:', response.status);
+            }
+        } catch (error) {
+            console.error('An error occurred:', error);
+        }
     };
 
     return (

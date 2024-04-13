@@ -4,7 +4,15 @@ import ProjectView from "./ProjectLayout.jsx";
 import RootLayout from "./RootLayout.jsx";
 import { useState } from "react";
 import Projects from "./Projects.jsx";
-import ProjectForm from "./ProjectForm.jsx";
+import ProjectForm from "./CreateForms/ProjectForm.jsx";
+import StoreForm from "./CreateForms/StoreForm.jsx";
+import SiteForm from "./CreateForms/SiteForm.jsx";
+import DivisionForm from "./CreateForms/DivisionForm.jsx";
+import SubDivisionForm from "./CreateForms/SubDivisionForm.jsx";
+import SubStationForm from "./CreateForms/SubStationForm.jsx";
+import BOQMasterForm from "./CreateForms/BOQMasterForm.jsx";
+import SupplierForm from "./CreateForms/SupplierForm.jsx";
+import SubContractorForm from "./CreateForms/SubContratorForm.jsx";
 
 
 const isLoggedIn = true;
@@ -51,10 +59,187 @@ const router = createBrowserRouter([
           },
         ],
       },
+
+      {
+        path: 'store',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <StoreForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'sitelocation',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <SiteForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'division',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <><DivisionForm /> <SubDivisionForm /> <SubStationForm /></>,
+          },
+          {
+            path: 'update/:id',
+            element: <div>DIVISION ETC UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'paymentmode',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <ProjectForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'materialcategory',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <ProjectForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'boqmaster',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <BOQMasterForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'supplier',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <SupplierForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
+
+      {
+        path: 'subcontrator',
+        element: isLoggedIn ? <ProjectView /> : <div>Not logged in</div>,
+        children: [
+          // {
+          //   index: false,
+          // },
+          {
+            path: 'view',
+            element: <Projects />,
+          },
+          {
+            path: 'create',
+            element: <SubContractorForm />,
+          },
+          {
+            path: 'update/:id',
+            element: <div>PROJECT UPDATE PAGE</div>,
+          },
+        ],
+      },
     ],
   },
-
 ]);
+
+
 
 function App() {
 

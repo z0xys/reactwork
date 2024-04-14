@@ -16,17 +16,17 @@
   "Stores": [
     {
       "id": "2603",
-      "storeName": "Kami Name",
-      "contactPerson": "Kami sama",
+      "storeName": "General Store",
+      "contactPerson": "General Salesman",
       "contactNo": "9876543210",
-      "address": "Heaven"
+      "address": "General Street"
     },
     {
       "id": "9102",
-      "storeName": "Siddnat Ki Dukan",
-      "contactPerson": "smaitra.com",
+      "storeName": "AB Services",
+      "contactPerson": "ABCDE",
       "contactNo": "975431",
-      "address": "Santoshpur"
+      "address": "Jadavpur"
     }
   ],
   "Projects": [

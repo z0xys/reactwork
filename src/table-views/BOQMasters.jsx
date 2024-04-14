@@ -50,7 +50,7 @@ export default function BOQMasters() {
                     <Button>Edit</Button>
                 </Grid>
             </div>
-            <div className="h-5/6 flex-1" >
+            <div className="h-auto flex-1" >
 
                 <GenericTable data={data} cols={cols} />
             </div>

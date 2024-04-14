@@ -44,15 +44,15 @@ const SupplierForm = () => {
             <div>
                 <label>Supplier Name:</label>
                 {errors.supplierName?.type === 'required' && (
-                    <span>This field is required</span>
+                    <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.supplierName?.type === 'maxLength' && (
+                {/* {errors.supplierName?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('supplierName', { required: true, maxLength: 20 })}
+                        {...register('supplierName', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                     />
                 </div>
@@ -63,15 +63,15 @@ const SupplierForm = () => {
                 {errors.address?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.address?.type === 'maxLength' && (
+                {/* {errors.address?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('address', { required: true, maxLength: 20 })}
+                        {...register('address', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -81,15 +81,15 @@ const SupplierForm = () => {
                 {errors.gst?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.gst?.type === 'maxLength' && (
+                {/* {errors.gst?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('gst', { required: true, maxLength: 20 })}
+                        {...register('gst', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -99,15 +99,15 @@ const SupplierForm = () => {
                 {errors.pan?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.pan?.type === 'maxLength' && (
+                {/* {errors.pan?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('pan', { required: true, maxLength: 20 })}
+                        {...register('pan', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -118,14 +118,14 @@ const SupplierForm = () => {
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
                 {errors.bankAcNo?.type === 'pattern' && (
-                    <span>Enter appropriate Number</span>
+                    <span>Please provide numbers only</span>
                 )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="number"
                         {...register('bankAcNo', { required: true, pattern: /^[0-9]+$/ })}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -135,15 +135,15 @@ const SupplierForm = () => {
                 {errors.bankAdressName?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.bankAdressName?.type === 'maxLength' && (
+                {/* {errors.bankAdressName?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('bankAdressName', { required: true, maxLength: 20 })}
+                        {...register('bankAdressName', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -153,15 +153,15 @@ const SupplierForm = () => {
                 {errors.ifscCode?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.ifscCode?.type === 'maxLength' && (
+                {/* {errors.ifscCode?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('ifscCode', { required: true, maxLength: 20 })}
+                        {...register('ifscCode', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -171,15 +171,15 @@ const SupplierForm = () => {
                 {errors.factoryLocation?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.factoryLocation?.type === 'maxLength' && (
+                {/* {errors.factoryLocation?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('factoryLocation', { required: true, maxLength: 20 })}
+                        {...register('factoryLocation', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -189,15 +189,15 @@ const SupplierForm = () => {
                 {errors.productsManufacturer?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.productsManufacturer?.type === 'maxLength' && (
+                {/* {errors.productsManufacturer?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('productsManufacturer', { required: true, maxLength: 20 })}
+                        {...register('productsManufacturer', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -207,15 +207,15 @@ const SupplierForm = () => {
                 {errors.contactNo?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.contactNo?.type === 'pattern' && (
-                    <span>Enter appropriate Number</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                {/* {errors.contactNo?.type === 'pattern' && (
+                    <span>Please provide only numbers</span>
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="number"
                         {...register('contactNo', { required: true, pattern: /^[0-9]+$/ })}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -225,15 +225,15 @@ const SupplierForm = () => {
                 {errors.designation?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.designation?.type === 'maxLength' && (
+                {/* {errors.designation?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="text"
-                        {...register('designation', { required: true, maxLength: 20 })}
+                        {...register('designation', { required: true})}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -244,14 +244,14 @@ const SupplierForm = () => {
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
                 {errors.mobileNo?.type === 'pattern' && (
-                    <span>Enter appropriate Number</span>
+                    <span>Please provide numbers only</span>
                 )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="number"
                         {...register('mobileNo', { required: true, pattern: /^[0-9]+$/ })}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>
@@ -261,15 +261,15 @@ const SupplierForm = () => {
                 {errors.emailId?.type === 'required' && (
                     <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                 )}
-                {errors.emailId?.type === 'maxLength' && (
+                {/* {errors.emailId?.type === 'maxLength' && (
                     <span>Name cannot exceed 20 characters</span>
-                )}
-                <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                )} */}
+                <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                     <input
                         type="email"
-                        {...register('emailId', { required: true, maxLength: 20 })}
+                        {...register('emailId', { required: true, })}
                         className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                        placeholder='pname'
+                        
                     />
                 </div>
             </div>

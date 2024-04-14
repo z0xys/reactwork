@@ -17,6 +17,7 @@ import SubContractors from "./table-views/SubContractors.jsx";
 import Divisions from "./table-views/Divisions.jsx";
 import DivisionRender from "./CreateForms/DivisionRender.jsx";
 import Login from "./Login.jsx";
+import Dashboard from "./Dashboard.jsx";
 
 
 const isLoggedIn = true;
@@ -40,7 +41,7 @@ const router = createBrowserRouter([
       },
       {
         path: 'dashboard',
-        element: isLoggedIn?<div>DASHBOARD PAGE</div>:  <Navigate to="/login" />,
+        element: isLoggedIn?<Dashboard/>:  <Navigate to="/login" />,
       },
       {
         path: 'project',

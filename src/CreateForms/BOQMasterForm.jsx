@@ -43,15 +43,15 @@ const BOQMasterForm = () => {
                 <div>
                     <label>Product Name:</label>
                     {errors.productName?.type === 'required' && (
-                        <span>This field is required</span>
+                        <span  className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
-                    {errors.productName?.type === 'maxLength' && (
+                    {/* {errors.productName?.type === 'maxLength' && (
                         <span>Name cannot exceed 20 characters</span>
-                    )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    )} */}
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="text"
-                            {...register('productName', { required: true, maxLength: 20 })}
+                            {...register('productName', { required: true})}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
                         />
 
@@ -63,15 +63,14 @@ const BOQMasterForm = () => {
                     {errors.productCategory?.type === 'required' && (
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
-                    {errors.productCategory?.type === 'maxLength' && (
+                    {/* {errors.productCategory?.type === 'maxLength' && (
                         <span>Name cannot exceed 20 characters</span>
-                    )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    )} */}
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="text"
-                            {...register('productCategory', { required: true, maxLength: 20 })}
+                            {...register('productCategory', { required: true})}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
                         />
                     </div>
                 </div>
@@ -81,15 +80,15 @@ const BOQMasterForm = () => {
                     {errors.gst?.type === 'required' && (
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
-                    {errors.gst?.type === 'maxLength' && (
+                    {/* {errors.gst?.type === 'maxLength' && (
                         <span>Name cannot exceed 20 characters</span>
-                    )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    )} */}
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="text"
-                            {...register('gst', { required: true, maxLength: 20 })}
+                            {...register('gst', { required: true})}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
+
                         />
                     </div>
                 </div>
@@ -99,15 +98,15 @@ const BOQMasterForm = () => {
                     {errors.uom?.type === 'required' && (
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
-                    {errors.uom?.type === 'maxLength' && (
+                    {/* {errors.uom?.type === 'maxLength' && (
                         <span>Name cannot exceed 20 characters</span>
-                    )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    )} */}
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="text"
-                            {...register('uom', { required: true, maxLength: 20 })}
+                            {...register('uom', { required: true})}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
+                            
                         />
                     </div>
                 </div>
@@ -118,14 +117,13 @@ const BOQMasterForm = () => {
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
                     {errors.boqPrice?.type === 'pattern' && (
-                        <span>Enter appropriate Number</span>
+                        <span className='text-red-500 text-sm mt-2 ml-2'>Please provide only numbers</span>
                     )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="number"
                             {...register('boqPrice', { required: true, pattern: /^[0-9]+$/ })}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
                         />
                     </div>
                 </div>
@@ -136,14 +134,13 @@ const BOQMasterForm = () => {
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
                     {errors.projectBoqPrice?.type === 'pattern' && (
-                        <span>Enter appropriate Number</span>
+                        <span className='text-red-500 text-sm mt-2 ml-2'>Please provide only numbers</span>
                     )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="number"
                             {...register('projectBoqPrice', { required: true, pattern: /^[0-9]+$/ })}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
                         />
                     </div>
                 </div>
@@ -154,14 +151,14 @@ const BOQMasterForm = () => {
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
                     {errors.ammendment?.type === 'pattern' && (
-                        <span>Enter appropriate Number</span>
+                        <span className='text-red-500 text-sm mt-2 ml-2'>Please provide only numbers</span>
                     )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="number"
                             {...register('ammendment', { required: true, pattern: /^[0-9]+$/ })}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
+
                         />
                     </div>
                 </div>
@@ -171,15 +168,15 @@ const BOQMasterForm = () => {
                     {errors.remarks?.type === 'required' && (
                         <span className='text-red-500 text-sm mt-2 ml-2'>This field is required</span>
                     )}
-                    {errors.remarks?.type === 'maxLength' && (
+                    {/* {errors.remarks?.type === 'maxLength' && (
                         <span>Name cannot exceed 20 characters</span>
-                    )}
-                    <div className="flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
+                    )} */}
+                    <div className="bg-slate-100 flex rounded-md shadow-sm ring-1 ring-inset ring-gray-300 focus-within:ring-2 focus-within:ring-inset focus-within:ring-indigo-600 sm:max-w-md">
                         <input
                             type="text"
-                            {...register('remarks', { required: true, maxLength: 20 })}
+                            {...register('remarks', { required: true})}
                             className="block flex-1 border-0 bg-transparent py-1.5 pl-1 text-gray-900 outline-0 placeholder:text-gray-400 focus:ring-0 sm:text-sm sm:leading-6"
-                            placeholder='pname'
+                            
                         />
                     </div>
                 </div>
